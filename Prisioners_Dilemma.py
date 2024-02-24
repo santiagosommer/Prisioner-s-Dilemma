@@ -1,11 +1,6 @@
-"""
-Explicar literalmente que hace paso a paso como ejemplo
-"""
-
 import random
 
 from statistics import mean
-import numpy as np
 
 # CONSTANTS
 # Payoff matrix used in Scodel et al. (1959)
@@ -62,18 +57,17 @@ class SimpleGame:
         
         # return a mapping of each player to its mean payoff
         return { player1:mean(pay1), player2:mean(pay2) }
-
-
-
-
+    
 
 def transpose(matrix):
     tuple1 = ()
     tuple2 = ()
     for element in matrix:
-        tuple1 = tuple1 + (element[0])
-        tuple2 = tuple2 + (element[0])
-    
+        tuple1 = (tuple1) + (element[0], )
+        tuple2 = (tuple2) + (element[1], )
+        print(tuple1)
+    return [tuple1, tuple2]
+
 
 def main():
     ## GAME: SimpleGame with RandomPlayer
